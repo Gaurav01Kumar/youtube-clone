@@ -1,7 +1,6 @@
 import React from "react";
 import { FcMenu } from "react-icons/fc";
 import {
-  
   FaAlignJustify,
   FaBell,
   FaPlayCircle,
@@ -12,12 +11,12 @@ import { RiVideoUploadFill } from "react-icons/ri";
 import styles from "../style";
 const Header = () => (
   <header
-    className="fixed top-0 left-0
+    className="fixed -top-3 left-0 z-30 bg-black
   w-full  flex justify-between items-center  px-4"
   >
     <div className="flex gap-2  items-center">
       <FaAlignJustify className={`${styles.icon}`} />
-      <div className="flex items-center">
+      <div className="flex items-center ml-4">
         <FaPlayCircle className={`${styles.icon}`} />
         <h3 className={`${styles.heading3}`}>MyTube</h3>
       </div>
