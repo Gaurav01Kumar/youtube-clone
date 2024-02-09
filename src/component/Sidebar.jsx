@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 
 import {
@@ -9,18 +9,25 @@ import {
   FaTasks,
 } from "react-icons/fa";
 import { playList, subscrbciption } from "../constants";
+import { SidebarContext } from "../context/SidebarContext";
 
 const Sidebar = () => {
   const [sliceNumber, setSlicNumber] = useState(true);
+  const { isToggled } = useContext(SidebarContext);
   return (
-    <div className="hover:overflow-y-scroll py-3 h-full  -z-30">
+    <div
+      className={
+        isToggled
+          ? " fixed top-16 left-0  xs:max-w-[240px] w-[240px] hover:overflow-y-scroll py-3 h-full  transition-transform z-30"
+          : "xs:max-w-[0px] transition-transform hidden  fixed left-0"
+      }
+    >
       <div>
         <div>
           <ul className="flex flex-col gap-4">
             <li className="hover:bg-slate-900 transition-shadow">
               <Link
                 to="/"
-                preventScrollRese={true}
                 className="xs:w-full w-[100px] flex 
                 items-center gap-[30px] px-3
                  text-white font-semibold text-[17px] cursor-pointer"
@@ -32,7 +39,6 @@ const Sidebar = () => {
             <li className="hover:bg-slate-900 transition-shadow">
               <Link
                 to="/"
-                preventScrollRese={true}
                 className="xs:w-full w-[100px] flex 
                 items-center gap-[30px] px-3
                  text-white font-semibold text-[17px] cursor-pointer"
@@ -49,7 +55,6 @@ const Sidebar = () => {
               >
                 <Link
                   to="/"
-                  preventScrollRese={true}
                   className="xs:w-full w-[100px] flex 
                 items-center gap-[30px] px-3
                  text-white font-semibold text-[17px] 
@@ -76,7 +81,6 @@ const Sidebar = () => {
                   >
                     <Link
                       to="/"
-                      preventScrollRese={true}
                       className="xs:w-full w-[100px] flex 
                 items-center gap-[30px] px-3
                  text-white font-semibold text-[17px] 
