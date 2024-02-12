@@ -9,6 +9,7 @@ import {
 import { RiVideoUploadFill } from "react-icons/ri";
 import { SidebarContext } from "../context/SidebarContext";
 import styles from "../style";
+import Logo from "./Logo";
 const Header = () => {
   const { toggle } = useContext(SidebarContext);
   return (
@@ -18,10 +19,7 @@ const Header = () => {
     >
       <div className="flex gap-2  items-center">
         <FaAlignJustify className={`${styles.icon}`} onClick={toggle} />
-        <div className="flex items-center ml-4">
-          <FaPlayCircle className={`${styles.icon}`} />
-          <h3 className={`${styles.heading3}`}>MyTube</h3>
-        </div>
+        <Logo />
       </div>
       <div
         className="flex gap-2  items-center justify-center
