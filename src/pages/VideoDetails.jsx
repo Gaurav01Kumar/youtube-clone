@@ -16,31 +16,31 @@ const VideoRecomendationCard = ({
   return (
     <div
       key={id}
-      className="w-[300px] xs:ml-5 
-    flex p-2 flex-col h-[210px] mt-10 relative cursor-pointer "
+      className="w-[250px] xs:ml-5  gap-3
+    flex p-2  h-[100px] mt-10 relative cursor-pointer "
     >
       <video
         poster={thumnailUrl}
         autoFocus
-        className="h-[170px] bg-black w-[270px]
+        className="h-[100px] bg-black w-[140px]
        rounded"
       >
         <source src={videoUrl} />
       </video>
       <p
         className="absolute text-slate-300 
-         top-[60%] left-[78%]"
+         top-[70%] left-[45%]"
       >
         {duration}
       </p>
       <div className="flex w-[100%] gap-4 p-1">
-        <div>
+        {/* <div>
           <img src={person} alt="author" className="h-[30px] rounded-full" />
-        </div>
+        </div> */}
         <div className="text-white w-[80%]">
-          <h4 className="w-[220px] text-[15px] ">{title}</h4>
-          <p className="text-slate-600 text-[15px]">{author}</p>
-          <div className="flex text-[14px]  w-[100%] gap-5 text-slate-400">
+          <h4 className="w-[220px] text-[13px] ">{title}</h4>
+          <p className="text-slate-300 hover:font-bold text-[12px]">{author}</p>
+          <div className="flex text-[12px]  w-[100%] gap-5 text-slate-200">
             <p>{views} views</p>
             <p>{uploadTime}</p>
           </div>
@@ -59,15 +59,12 @@ const VideoDetails = () => {
           : "transition-transform ml-[3%] mt-[2%]"
       }
     >
-      <div>
+      <div className="flex gap-3 items-start flex-col sm:flex-row">
         <div>
           <VideoCard />
         </div>
 
-        <div
-          className="lg:grid-cols-4 grid xs:grid-cols-2 grid-cols-1 
-      gap-10  sm:grid-cols-3  ss:grid-col-2"
-        >
+        <div className="flex flex-col">
           {videoList &&
             videoList.map((video, id) => (
               <VideoRecomendationCard id={id} {...video} />
