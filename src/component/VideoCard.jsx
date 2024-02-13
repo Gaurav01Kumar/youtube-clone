@@ -4,8 +4,8 @@ import { person } from "../assets";
 import { FaArrowDown, FaPlus, FaRegThumbsDown, FaRegThumbsUp, FaSave, FaShare } from "react-icons/fa";
 const VideoCard = () => {
   return (
-    <div className="min-w-[420px] max-w-[850px] ">
-      <div className="bg-slate-700 p-1 shadow-2xl min-w-[420px] max-w-[850px] rounded-[10px] ">
+    <div className="min-w-[420px] max-w-[800px] ">
+      <div className="bg-slate-700 p-1 shadow-2xl min-w-[420px] max-w-[800px] rounded-[10px] ">
         <video width="" height="" className="w-full border-none bg-transparent" controls>
           <source src="" type="" />
         </video>
@@ -20,9 +20,9 @@ const VideoCard = () => {
               <img src={person} alt="chanel owner avtar" className="h-[40px] rounded-full" />
             </div>
             <div className="">
-              <h6 className="text-[13px] sm:text-[17px] text-slate-100
+              <h6 className="text-[8px] sm:text-[12px] text-slate-100
               font-serif font-semibold">Chanel Name</h6>
-              <p className=" text-[10px] sm:text-[15px]  text-white font-semibold">133K subscriber</p>
+              <p className=" text-[10px] sm:text-[12px]  text-white font-semibold">133K subscriber</p>
             </div>
             <button type="submit"
             className="bg-white text-black rounded-[20px]

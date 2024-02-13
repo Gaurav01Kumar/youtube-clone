@@ -18,7 +18,7 @@ const Sidebar = () => {
     <div
       className={
         isToggled
-          ? " fixed top-16 left-0  xs:max-w-[240px] w-[240px] hover:overflow-y-scroll py-3 h-full  transition-transform z-30"
+          ? " fixed top-16 left-0  xs:max-w-[240px] w-[240px] hover:overflow-y-scroll bg-black z-10 py-3 h-full  transition-transform z-30"
           : "xs:max-w-[0px] transition-transform hidden  fixed left-0"
       }
     >
