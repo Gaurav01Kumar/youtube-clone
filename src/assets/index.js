@@ -1,2 +1,3 @@
 import person from "./person.png";
-export { person };
+import curve from "./curve.svg"
+export { person,curve };

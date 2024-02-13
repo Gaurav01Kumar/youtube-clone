@@ -7,8 +7,8 @@ import Button from "../component/Button";
 import { FaGoogle } from "react-icons/fa";
 const Signup = () => {
   return (
-    <div className={`${styles.flexCenter}`}>
-      <div className="my-10 ">
+    <div className={`${styles.flexCenter} signup`}>
+      <div className="my-10  ">
         <div
           className="flex items-center  justify-center
          max-w-[440px]"
@@ -33,7 +33,7 @@ const Signup = () => {
                   label="First Name"
                   type="text"
                   placeholder="Enter your first name"
-                  className="mt-4 w-[270px]"
+                  className="mt-4 w-[370px]"
                 />
               </div>
               <div>
@@ -41,7 +41,7 @@ const Signup = () => {
                   label="Last Name"
                   type="text"
                   placeholder="Enter your last name"
-                  className="mt-4 w-[270px]"
+                  className="mt-4 w-[370px]"
                 />
               </div>
             </div>
@@ -51,7 +51,7 @@ const Signup = () => {
                   label="Username"
                   type="text"
                   placeholder="Enter your userName"
-                  className="mt-4 w-[270px]"
+                  className="mt-4 w-[370px]"
                 />
               </div>
               <div>
@@ -59,7 +59,7 @@ const Signup = () => {
                   label="Your email"
                   type="email"
                   placeholder="Enter your email"
-                  className="mt-4 w-[270px]"
+                  className="mt-4 w-[370px]"
                 />
               </div>
             </div>
@@ -69,7 +69,7 @@ const Signup = () => {
                   label="New password"
                   type="password"
                   placeholder="Enter your password"
-                  className="mt-4 w-[270px]"
+                  className="mt-4 w-[370px]"
                 />
               </div>
               <div>
@@ -77,12 +77,13 @@ const Signup = () => {
                   label="Confirm password"
                   type="password"
                   placeholder="Re-enter your password"
-                  className="mt-4 w-[270px]"
+                  className="mt-4 w-[370px]"
                 />
               </div>
             </div>
           </div>
-          <Button className="w-[270px]">Signup</Button>
+          <Button className="w-[270px]  hover:scale-110 shadow shadow-slate-200 
+            transition-transform hover:border hover:border-cyan-600">Signup</Button>
         </form>
         <span className="text-slate-400 text-center mx-[50%] text-[30px]">
           OR
@@ -102,12 +103,14 @@ const Signup = () => {
         <div>
           <Button
             className="mt-10 flex  items-center 
-            justify-center gap-5"
+            justify-center gap-5  hover:scale-110 shadow shadow-slate-200 
+            transition-transform hover:border hover:border-cyan-600"
           >
             <FaGoogle className="text-red-800" /> Signup with Google
           </Button>
         </div>
       </div>
+    
     </div>
   );
 };
