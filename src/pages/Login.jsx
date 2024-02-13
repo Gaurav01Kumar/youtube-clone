@@ -42,7 +42,7 @@ const Login = () => {
                 label="Your email"
                 type="email"
                 placeholder="Enter your email"
-                className="mt-4 w-[270px]"
+                className="mt-4 w-[370px]"
               />
             </div>
             <div>
@@ -50,7 +50,7 @@ const Login = () => {
                 label="Password"
                 type="password"
                 placeholder="Enter your password"
-                className="mt-4 mb-6 w-[270px]"
+                className="mt-4 mb-6 w-[370px]"
               />
               <Link
                 to="#"
@@ -63,7 +63,9 @@ const Login = () => {
               </Link>
             </div>
           </div>
-          <Button className="sm:mt-0 mt-[30px]">Login</Button>
+          <Button className="sm:mt-0 mt-[30px]
+          hover:scale-110 shadow shadow-slate-200 transition-transform
+          ">Login</Button>
         </form>
         <span className="text-slate-400 text-center mx-[50%] text-[30px]">
           OR
@@ -83,7 +85,8 @@ const Login = () => {
         <div>
           <Button
             className="mt-10 flex  items-center 
-            justify-center gap-5"
+            justify-center gap-5    hover:scale-110 shadow shadow-slate-200 
+            transition-transform hover:border hover:border-cyan-600"
           >
             <FaGoogle className="text-red-800" /> Sign with Google
           </Button>

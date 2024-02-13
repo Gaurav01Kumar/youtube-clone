@@ -6,6 +6,8 @@ import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx";
+import VideoDetails from "./pages/VideoDetails.jsx";
+import NotFound from "./pages/NotFound.jsx";
 
 const router = createBrowserRouter([
   {
@@ -16,21 +18,27 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
+      {
+        path: "/videoDetails/:id",
+        element: <VideoDetails />,
+      },
     ],
   },
   {
-    path:"/login",
-    element:<Login />
+    path: "/login",
+    element: <Login />,
   },
   {
-    path:"/signup",
-    element:<Signup />
+    path: "/signup",
+    element: <Signup />,
+  },
+  {
+    path:"/:name",
+    element:<NotFound/>
   }
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    
     <RouterProvider router={router} />
-    
   </React.StrictMode>
 );
