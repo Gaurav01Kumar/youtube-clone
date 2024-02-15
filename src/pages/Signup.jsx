@@ -81,9 +81,27 @@ const Signup = () => {
                 />
               </div>
             </div>
+
+            <div className="w-full flex gap-20 flex-col sm:flex-row items-start">
+              <div>
+                <Input label="Avtar" type="file" className="mt-4 w-[370px]" />
+              </div>
+              <div>
+                <Input
+                  label="Cover Image"
+                  type="file"
+                  placeholder="Re-enter your password"
+                  className="mt-4 w-[370px]"
+                />
+              </div>
+            </div>
           </div>
-          <Button className="w-[270px]  hover:scale-110 shadow shadow-slate-200 
-            transition-transform hover:border hover:border-cyan-600">Signup</Button>
+          <Button
+            className="w-[270px]  hover:scale-110 shadow shadow-slate-200 
+            transition-transform hover:border hover:border-cyan-600"
+          >
+            Signup
+          </Button>
         </form>
         <span className="text-slate-400 text-center mx-[50%] text-[30px]">
           OR
@@ -110,7 +128,6 @@ const Signup = () => {
           </Button>
         </div>
       </div>
-    
     </div>
   );
 };
