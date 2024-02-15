@@ -8,6 +8,7 @@ import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx";
 import VideoDetails from "./pages/VideoDetails.jsx";
 import NotFound from "./pages/NotFound.jsx";
+import ForgotPassword from "./pages/ForgotPassword.jsx";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,11 @@ const router = createBrowserRouter([
   {
     path: "/signup",
     element: <Signup />,
+  },
+  {
+    path:"/forgotPassword",
+    element:<ForgotPassword />
+
   },
   {
     path:"/:name",
