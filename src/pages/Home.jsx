@@ -57,8 +57,8 @@ const Home = () => {
     <div
       className={
         isToggled
-          ? "ml-[15%] mt-[5%] p-10 overscroll-x-none overflow-hidden"
-          : "transition-transform ml-[3%] mt-[5%]"
+          ? "ml-[15%] mt-[5%] xs:ml-0 p-10 overscroll-x-none overflow-hidden"
+          : "transition-transform ml-[3%] mx-2 mt-[5%] xs:mt-[15%]"
       }
     >
       <div className="w-full flex  overflow-hidden">

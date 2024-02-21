@@ -4,7 +4,7 @@ import { person } from "../assets";
 import { FaArrowDown, FaPlus, FaRegThumbsDown, FaRegThumbsUp, FaSave, FaShare } from "react-icons/fa";
 const VideoCard = () => {
   return (
-    <div className="min-w-[420px] max-w-[800px] ">
+    <div className="min-w-[420px] max-w-[800px] xs:w-full">
       <div className="bg-slate-700 p-1 shadow-2xl min-w-[420px] max-w-[800px] rounded-[10px] ">
         <video width="" height="" className="w-full border-none bg-transparent" controls>
           <source src="" type="" />
