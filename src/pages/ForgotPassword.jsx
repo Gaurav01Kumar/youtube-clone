@@ -57,7 +57,7 @@ const ForgotPassword = () => {
           </div>
           <Button className="sm:mt-0 mt-[30px]
           hover:scale-110 shadow shadow-slate-200 transition-transform
-          ">Login</Button>
+          ">Change password</Button>
         </form>
      
       </div>

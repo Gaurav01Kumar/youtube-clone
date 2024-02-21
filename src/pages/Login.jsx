@@ -1,11 +1,10 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Logo from "../component/Logo";
 import styles from "../style";
 import Input from "../component/input";
 import { Link } from "react-router-dom";
 import Button from "../component/Button";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 const Login = () => {
@@ -17,7 +16,39 @@ const Login = () => {
   //     },
   //     { scope: container }
   //   );
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const navigation = useNavigate();
+  const SubmitLoginForm = async (e) => {
+    e.preventDefault();
+   
+    try {
+      if (email === '') {
+        return setError("email is missing");
+      }
+      if (password === '') {
+        return setError("Password is missing");
+      }
+      if (password.length < 8) {
+        return setError("password length must be minimum 8 digit ");
+      }
+      await axios
+        .post("http://localhost:3001/login", {
+          headers: "application/json",
+          data: {
+            email: email,
+            password: password,
+          },
+        })
+        .then((res) => {
+          console.log(res.data);
+        })
+        .catch((err) => setError(err.message));
+    } catch (error) {
+      setError(error.message);
+    }
+  };
   return (
     <div className={`${styles.flexCenter}h-[100vh]"`}>
       <div className="my-10 form-box " ref={container}>
@@ -31,7 +62,7 @@ const Login = () => {
 
         <form
           className="flex flex-col gap-10 items-center justify-center"
-          onSubmit={() => navigation("/")}
+          onSubmit={SubmitLoginForm}
         >
           <div
             className="flex flex-col sm:flex-row
@@ -43,6 +74,8 @@ const Login = () => {
                 type="email"
                 placeholder="Enter your email"
                 className="mt-4 w-[370px]"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div>
@@ -51,6 +84,8 @@ const Login = () => {
                 type="password"
                 placeholder="Enter your password"
                 className="mt-4 mb-6 w-[370px]"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
               <Link
                 to="/forgotPassword"
@@ -63,9 +98,15 @@ const Login = () => {
               </Link>
             </div>
           </div>
-          <Button className="sm:mt-0 mt-[30px]
+          {error && error?<span className=" text-red-700 text-xl uppercase ">{error}</span>:''}
+          <Button
+            className="sm:mt-0 mt-[20px]
           hover:scale-110 shadow shadow-slate-200 transition-transform
-          ">Login</Button>
+          "
+            type="submit"
+          >
+            Login
+          </Button>
         </form>
         <span className="text-slate-400 text-center mx-[50%] text-[30px]">
           OR
